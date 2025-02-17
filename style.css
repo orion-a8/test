@@ -1,55 +1,56 @@
 body {
-            font-family: sans-serif;
-        }
+    font-family: sans-serif;
+}
 
-        h1 {
-            text-align: center;
-        }
+h1 {
+    text-align: center;
+}
 
-        form {
-            width: 50%;
-            margin: 0 auto;
-        }
+form {
+    width: 50%;
+    margin: 0 auto;
+}
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
+label {
+    display: block;
+    margin-bottom: 5px;
+}
 
-        select, input, textarea {
+select, input, textarea {
     border: 1px solid #ccc;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px;
     background-color: #f9f9f9;
     transition: border-color 0.3s ease;
 }
 
 select:focus, input:focus, textarea:focus {
-    border-color: #4CAF50; /* Focus par border color change karein */
+    border-color: #4CAF50;
     outline: none;
 }
-       button {
+
+button {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
     border: none;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049; /* Hover effect */
+    background-color: #45a049;
 }
 
-        #dataDisplay {
-            width: 80%;
-            margin: 20px auto;
-        }
+#dataDisplay {
+    width: 80%;
+    margin: 20px auto;
+}
 
-        #dataTable {
+#dataTable {
     width: 100%;
     border-collapse: collapse;
-    overflow-x: auto; /* Horizontal scroll enable karein */
+    overflow-x: auto;
     display: block;
 }
 
@@ -57,5 +58,5 @@ button:hover {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
-    white-space: nowrap; /* Text ko wrap hone se roke */
+    white-space: nowrap;
 }
