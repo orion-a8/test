@@ -3,117 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Registration</title>
+    <title>Registration Form</title>
     <style>
         body {
-            font-family: sans-serif;
-            margin: 0;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             background-color: #f4f4f4;
         }
         .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
+            background: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
         }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"],
-        input[type="tel"] {
+        input {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
+            margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* Ensures padding is included in width */
+            border-radius: 5px;
         }
         button {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50;
+            background: #28a745;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
         }
         button:hover {
-            background-color: #45a049;
-        }
-        #message {
-            margin-top: 10px;
-            text-align: center;
+            background: #218838;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Family Registration</h2>
-        <form id="registrationForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="mobile">Mobile Number:</label>
-            <input type="tel" id="mobile" name="mobile" required>
-
-            <button type="submit">Submit</button>
-        </form>
-        <div id="message"></div>
+        <h2>Registration Form</h2>
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="tel" id="mobile" placeholder="Enter Mobile Number" required>
+        <button onclick="submitForm()">Submit</button>
+        <p id="response"></p>
     </div>
-
     <script>
-        const form = document.getElementById('registrationForm');
-        const messageDiv = document.getElementById('message');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form from actually submitting
-
-            const name = document.getElementById('name').value;
-            const mobile = document.getElementById('mobile').value;
-
-            // Basic client-side validation (you can add more robust checks)
+        function submitForm() {
+            let name = document.getElementById('name').value;
+            let mobile = document.getElementById('mobile').value;
+            
             if (!name || !mobile) {
-                showMessage("Please fill in all fields.", "red");
+                alert('Please fill all fields');
                 return;
             }
-
-            // Google Apps Script URL (replace with your actual URL)
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbx3BWl7dIlSHy2xpqSLWduRK0wlIm7n-9BnhWPem-JNdPHe5vL6JF_fetBrjUE4Go46Vw/exec'; // **IMPORTANT: Replace this!**
-
-            // Send data to Google Apps Script
-            fetch(scriptUrl, {
+            
+            fetch('https://script.google.com/macros/s/AKfycbwLjB-hI_A3G8tTHJxjZQmMkDJWPvAoD-FN938T8HvgmQ1l0GpAsvQG8bmLka30wW4aOw/exec', {
                 method: 'POST',
-                body: JSON.stringify({ name: name, mobile: mobile }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ name, mobile })
             })
-            .then(response => response.json())
+            .then(response => response.text())
             .then(data => {
-                if (data.success) {
-                    showMessage("Registration successful!", "green");
-                    form.reset(); // Clear the form
-                } else {
-                    showMessage("Registration failed. Please try again.", "red");
-                }
+                document.getElementById('response').innerText = data;
             })
-            .catch(error => {
-                showMessage("An error occurred. Please try again later.", "red");
-                console.error("Error:", error);
-            });
-        });
-
-        function showMessage(msg, color) {
-            messageDiv.textContent = msg;
-            messageDiv.style.color = color;
+            .catch(error => console.error('Error:', error));
         }
     </script>
 </body>
