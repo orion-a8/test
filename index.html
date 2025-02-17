@@ -115,6 +115,11 @@ button:hover {
         </select><br><br>
         
         <label for="name">नाम:</label>
+        <input type="text" id="name" name="name" placeholder="अपना नाम दर्ज करें" required>
+
+        <label for="mobile">मोबाइल नंबर:</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="मोबाइल नंबर दर्ज करें" required>
+
         <label for="state">राज्य:</label>
        
         <select id="state" name="state" required onchange="populateSambhag()">
@@ -132,11 +137,7 @@ button:hover {
         <select id="jila" name="jila">
             <option value="">चुनें</option>
         </select><br><br>
-        <input type="text" id="name" name="name" placeholder="अपना नाम दर्ज करें" required>
-
-        <label for="mobile">मोबाइल नंबर:</label>
-        <input type="tel" id="mobile" name="mobile" placeholder="मोबाइल नंबर दर्ज करें" required>
-
+        
         
         <label for="address">पता:</label>
         <textarea id="address" name="address" placeholder="पता दर्ज करें" required></textarea>
