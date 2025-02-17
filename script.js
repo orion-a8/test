@@ -1,4 +1,4 @@
- <script>
+
         // script.js ke saare JavaScript code yahan paste karein
         function displayData() {
             const scriptUrl = 'https://script.google.com/macros/s/AKfycbzTeKvIGKl_UFyEsPiAVZrPj-HuZ3XfCN9MV1q9FbmLt5IOVcTUkN4-Z1ATEQN0vErQ/exec';
@@ -100,4 +100,4 @@
                 alert("डेटा सबमिट करने में त्रुटि!");
             });
         });
-    </script>
+    
