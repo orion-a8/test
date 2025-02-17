@@ -75,48 +75,60 @@ button:hover {
     <h1>स्वतंत्रता सेनानी उत्तराधिकारी पंजीकरण</h1>
 
     <form id="registrationForm">
-       
-        <label for="freedomFighterName">स्वतंत्रता सेनानी का नाम:</label>
-        <input type="text" id="freedomFighterName" name="freedomFighterName" placeholder="स्वतंत्रता सेनानी का नाम दर्ज करें" required>
-        <label for="relation">स्वतंत्रता सेनानी संबंध:</label>
-        <select id="relation" name="relation" required>
-            <option value="पुत्र">पुत्र</option>
-            <option value="पुत्र वधु">पुत्र वधु </option>
-            <option value="पुत्री">पुत्री</option>
-            <option value="दामाद">दामाद</option>
-            <option value="पोता">प्रपौत्र </option>
-            <option value="प्रपौत्र वधू">प्रपौत्र वधू</option>
-            <option value="पोती">पोती</option>
-            <option value="नाती">नाती</option>
-            <option value="नातिन">नातिन</option>
-            <option value="पंती">पंती</option>
-            <option value="पंतन">पंतन</option>  
-            </select><br><br>
-                <label for="name">नाम:</label>
-        <input type="text" id="name" name="name" placeholder="अपना नाम दर्ज करें" required>
-        <label for="mobile">मोबाइल नंबर:</label>
-        <input type="tel" id="mobile" name="mobile" placeholder="मोबाइल नंबर दर्ज करें" required>
         <label for="state">राज्य:</label>
-               <select id="state" name="state" required onchange="populateSambhag()">
+        <select id="state" name="state" required onchange="populateSambhag()">
             <option value="anya">अन्य</option>
             <option value="madhya pradesh">मध्य प्रदेश</option>
             <option value="uttar pradesh">उत्तर प्रदेश</option>
         </select><br><br>
+
         <label for="sambhag">संभाग:</label>
         <select id="sambhag" name="sambhag" onchange="populateJila()">
             <option value="">चुनें</option>
         </select><br><br>
+
         <label for="jila">जिला:</label>
         <select id="jila" name="jila">
             <option value="">चुनें</option>
         </select><br><br>
+
+        
+
+        <label for="freedomFighterName">स्वतंत्रता सेनानी का नाम:</label>
+        <input type="text" id="freedomFighterName" name="freedomFighterName" placeholder="स्वतंत्रता सेनानी का नाम दर्ज करें" required>
+
+        <label for="relation">स्वतंत्रता सेनानी संबंध:</label>
+        <select id="relation" name="relation" required>
+            <option value="पुत्र">पुत्र</option>
+            <option value="पुत्री">पुत्री</option>
+            <option value="पोता">पोता</option>
+            <option value="पोती">पोती</option>
+            <option value="नाती">नाती</option>
+            <option value="नातिन">नातिन</option>
+            <option value="पंती">पंती</option>
+            <option value="पंतन">पंतन</option>
+        </select><br><br>
+
+        <label for="name">नाम:</label>
+        
+        <input type="text" id="name" name="name" placeholder="अपना नाम दर्ज करें" required>
+
+        <label for="mobile">मोबाइल नंबर:</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="मोबाइल नंबर दर्ज करें" required>
+
+      
         <label for="address">पता:</label>
         <textarea id="address" name="address" placeholder="पता दर्ज करें" required></textarea>
+
         <label for="organization">संगठन (यदि कोई हो):</label>
         <input type="text" id="organization" name="organization"><br><br>
+
         <button type="submit">Submit</button>
     </form>
-        <script>
+
+    
+
+    <script>
         // script.js ke saare JavaScript code yahan paste karein
         function displayData() {
             const scriptUrl = 'https://script.google.com/macros/s/AKfycbzTeKvIGKl_UFyEsPiAVZrPj-HuZ3XfCN9MV1q9FbmLt5IOVcTUkN4-Z1ATEQN0vErQ/exec';
@@ -176,7 +188,7 @@ button:hover {
                 'जबलपुर संभाग': ['जबलपुर जिला', 'कटनी जिला', 'नरसिंहपुर जिला', 'सिवनी जिला', 'छिंदवाड़ा जिला', 'बालाघाट जिला', 'मंडला जिला', 'डिंडौरी ज़िला', 'पांढुरना'],
                 'नर्मदापुरम संभाग': ['नर्मदापुरम', 'हरदा', 'बैतूल'],
                 'भोपाल संभाग': ['भोपाल', 'रायसेन', 'राजगढ़', 'सीहोर', 'विदिशा'],
-                'रीवा संभाग': ['रीवा', 'सतना', 'सीधी', 'सिंगरौली', 'मऊगंज' 'मैहर'],
+                'रीवा संभाग': ['रीवा', 'सतना', 'सीधी', 'सिंगरौली', 'मऊगंज'],
                 'शहडोल संभाग': ['अनूपपुर', 'उमरिया', 'शहडोल']
             };
 
