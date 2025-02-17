@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Registration</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #message {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Family Registration</h2>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const messageDiv = document.getElementById('message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from actually submitting
+
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+
+            // Basic client-side validation (you can add more robust checks)
+            if (!name || !mobile) {
+                showMessage("Please fill in all fields.", "red");
+                return;
+            }
+
+            // Google Apps Script URL (replace with your actual URL)
+            const scriptUrl = 'https://script.google.com/macros/s/AKfycbx3BWl7dIlSHy2xpqSLWduRK0wlIm7n-9BnhWPem-JNdPHe5vL6JF_fetBrjUE4Go46Vw/exec'; // **IMPORTANT: Replace this!**
+
+            // Send data to Google Apps Script
+            fetch(scriptUrl, {
+                method: 'POST',
+                body: JSON.stringify({ name: name, mobile: mobile }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showMessage("Registration successful!", "green");
+                    form.reset(); // Clear the form
+                } else {
+                    showMessage("Registration failed. Please try again.", "red");
+                }
+            })
+            .catch(error => {
+                showMessage("An error occurred. Please try again later.", "red");
+                console.error("Error:", error);
+            });
+        });
+
+        function showMessage(msg, color) {
+            messageDiv.textContent = msg;
+            messageDiv.style.color = color;
+        }
+    </script>
+</body>
+</html>
