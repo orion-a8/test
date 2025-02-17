@@ -75,27 +75,9 @@ button:hover {
     <h1>स्वतंत्रता सेनानी उत्तराधिकारी पंजीकरण</h1>
 
     <form id="registrationForm">
-        <label for="state">राज्य (सेनानी):</label>
-        <select id="state" name="state" required onchange="populateSambhag()">
-            <option value="anya">अन्य</option>
-            <option value="madhya pradesh">मध्य प्रदेश</option>
-            <option value="uttar pradesh">उत्तर प्रदेश</option>
-        </select><br><br>
-
-        <label for="sambhag">संभाग (सेनानी):</label>
-        <select id="sambhag" name="sambhag" onchange="populateJila()">
-            <option value="">चुनें</option>
-        </select><br><br>
-
-        <label for="jila">जिला (सेनानी):</label>
-        <select id="jila" name="jila">
-            <option value="">चुनें</option>
-        </select><br><br>
-        
-
+       
         <label for="freedomFighterName">स्वतंत्रता सेनानी का नाम:</label>
         <input type="text" id="freedomFighterName" name="freedomFighterName" placeholder="स्वतंत्रता सेनानी का नाम दर्ज करें" required>
-
         <label for="relation">स्वतंत्रता सेनानी संबंध:</label>
         <select id="relation" name="relation" required>
             <option value="पुत्र">पुत्र</option>
@@ -108,21 +90,14 @@ button:hover {
             <option value="नाती">नाती</option>
             <option value="नातिन">नातिन</option>
             <option value="पंती">पंती</option>
-            <option value="पंतन">पंतन</option>
-            
-            
-            
-        </select><br><br>
-        
-        <label for="name">नाम:</label>
+            <option value="पंतन">पंतन</option>  
+            </select><br><br>
+                <label for="name">नाम:</label>
         <input type="text" id="name" name="name" placeholder="अपना नाम दर्ज करें" required>
-
         <label for="mobile">मोबाइल नंबर:</label>
         <input type="tel" id="mobile" name="mobile" placeholder="मोबाइल नंबर दर्ज करें" required>
-
         <label for="state">राज्य:</label>
-       
-        <select id="state" name="state" required onchange="populateSambhag()">
+               <select id="state" name="state" required onchange="populateSambhag()">
             <option value="anya">अन्य</option>
             <option value="madhya pradesh">मध्य प्रदेश</option>
             <option value="uttar pradesh">उत्तर प्रदेश</option>
@@ -137,14 +112,10 @@ button:hover {
         <select id="jila" name="jila">
             <option value="">चुनें</option>
         </select><br><br>
-        
-        
         <label for="address">पता:</label>
         <textarea id="address" name="address" placeholder="पता दर्ज करें" required></textarea>
-
         <label for="organization">संगठन (यदि कोई हो):</label>
         <input type="text" id="organization" name="organization"><br><br>
-
         <button type="submit">Submit</button>
     </form>
 
