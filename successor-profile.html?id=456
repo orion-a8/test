@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>स्वतंत्रता सेनानी</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>स्वतंत्रता सेनानी विवरण</h1>
+        <nav>
+            <a href="index.html">होम</a> |
+            <a href="list.html">स्वतंत्रता सेनानी सूची</a> |
+            <a href="registration.html">रजिस्ट्रेशन</a> |
+            <a href="forum.html">समुदाय मंच</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2 id="fighterName">Loading...</h2>
+        <img id="fighterImage" src="placeholder.jpg" alt="स्वतंत्रता सेनानी">
+    </section>
+
+    <section id="contribution">
+        <h3>स्वतंत्रता संग्राम में योगदान</h3>
+        <p id="fighterContribution">Loading...</p>
+    </section>
+
+    <section id="bio">
+        <h3>जीवन परिचय</h3>
+        <p id="fighterBio">Loading...</p>
+    </section>
+
+    <section id="documents">
+        <h3>इतिहास से जुड़े दस्तावेज़ / चित्र</h3>
+        <img id="fighterDoc1" src="placeholder.jpg">
+    </section>
+
+    <section id="successors">
+        <h3>उत्तराधिकारी सूची</h3>
+        <ul id="successorList">
+            <li>Loading...</li>
+        </ul>
+    </section>
+
+    <section id="comments">
+        <h3>सुझाव और टिप्पणियाँ</h3>
+        <textarea id="commentBox"></textarea>
+        <button onclick="submitComment()">टिप्पणी करें</button>
+        <ul id="commentList"></ul>
+    </section>
+
+</body>
+</html>
