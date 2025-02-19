@@ -1,5 +1,5 @@
 function displayData() {
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzTeKvIGKl_UFyEsPiAVZrPj-HuZ3XfCN9MV1q9FbmLt5IOVcTUkN4-Z1ATEQN0vErQ/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzAbELfSboHpaoqeDK5X91nYxd4P9byIR_cKVqamcfK8k2KzDVGnaLwrV2wVvpojOkM/exec';
 
     fetch(scriptUrl)
         .then(response => response.json())
@@ -80,7 +80,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         data[key] = value;
     });
 
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzTeKvIGKl_UFyEsPiAVZrPj-HuZ3XfCN9MV1q9FbmLt5IOVcTUkN4-Z1ATEQN0vErQ/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbzAbELfSboHpaoqeDK5X91nYxd4P9byIR_cKVqamcfK8k2KzDVGnaLwrV2wVvpojOkM/exec';
 
     fetch(scriptUrl, {
         method: 'POST',
